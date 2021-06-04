@@ -35,49 +35,6 @@ https://blog.adafruit.com/2018/04/16/machine-learning-helps-to-grok-blood-test-r
 
 Example has also heard a lot about cloud computing. There is a lot of traditional code in the mainframe and in classic Java app servers. It works well for now ... but some of the software architects think it may be complimentary to explore some machine learning, and to accelerate development of new user interfaces in the cloud ( either public or private )
 
-
 #### Project aims
 
 In this repo there is a patient user interface. It is written using plain HTML, CSS and JavaScript served from a Node.js microservice. The code runs by default with test/demo data, that doesn't rely on a more sophisticated server. The following installation steps can help you easily deploy this using OpenShift S2I ( source to image ).
-
-### Installation
-
-First, you'll need a cluster. [Follow the directions](https://cloud.ibm.com/docs/containers?topic=containers-openshift_tutorial#openshift_create_cluster) to create a Red Hat OpenShift on IBM Cloud cluster.
-
-Next, you will need a fork of this repository. Scroll back up to the top of this page and click on the Fork button.
-
-![fork](./images/fork.png)
-
-Select your github user name from the pop-up window.
-
-To deploy your just-forked repository, go to the Web Console for your OpenShift cluster and create a project:
-
-![create project](./images/createproject.png)
-
-Click on your new project. You should see a view that looks like this:
-
-![project](./images/projectview.png)
-
-Click on the browse catalog button to see the images available to build with and scroll down to the Node.js image. Click on the 'Node.js' icon.
-
-![node](./images/node.png)
-
-Click through to the second step for configuration, and choose advanced options (a hyperlink on the bottom line).
-
-![config](./images/advanced.png)
-
-You'll see an advanced form like this:
-
-![form](./images/node-advanced-form.png)
-
-Enter your forked Git Repository URL and `/site` for the Context Dir. Click 'Create' at the bottom of the window to build and deploy the application. Scroll through to watch the build deploying:
-
-![build](./images/build.png)
-
-When the build has deployed, click the External Traffic Route and you should see the login screen:
-
-![login](./images/login.png)
-
-You can enter any strings for username and password, for instance test/test... because the app is just running in demo mode.
-
-And you've deployed a Node.js app to Kubernetes using OpenShift S2I.
